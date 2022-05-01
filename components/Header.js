@@ -18,7 +18,7 @@ import React from "react";
 import HeaderIcon from "./HeaderIcon";
 
 export default function Header() {
-  const {data: session} = useSession();
+  const { data: session } = useSession();
   console.log("session", session);
 
   return (
@@ -59,14 +59,19 @@ export default function Header() {
         <Image
           onClick={signOut}
           className="rounded-full cursor-pointer"
-          src={session && session.user.image}
-          width='40'
-          height='40'
+          src={
+            session
+              ? session.user.image
+              : "https://images.unsplash.com/photo-1600352712371-15fd49ca42b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+          }
+          width="40"
+          height="40"
           layout="fixed"
-          alt='user-image'
+          alt="user-image"
         />
-
-        <p className="whitespace-nowrap font-semibold pr-3">{session && session.user.name}</p>
+        <p className="whitespace-nowrap font-semibold pr-3">
+          {session ? session.user.name : "John"}
+        </p>
         <ViewGridAddIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />
         <ChatIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />
         <BellIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />

@@ -17,9 +17,14 @@ export default function Sidebar() {
   const { data: session, loading } = useSession();
   return (
     <div className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]">
-      {session && (
-        <SidebarRow src={session.user.image} title={session.user.name} />
-      )}
+      <SidebarRow
+        src={
+          session
+            ? session.user.image
+            : "https://images.unsplash.com/photo-1600352712371-15fd49ca42b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+        }
+        title={session ? session.user.name : "John"}
+      />
       <SidebarRow Icon={UsersIcon} title="Friends" />
       <SidebarRow Icon={UserGroupIcon} title="Groups" />
       <SidebarRow Icon={ShoppingBagIcon} title="Marketplace" />
