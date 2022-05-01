@@ -59,14 +59,14 @@ export default function Header() {
         <Image
           onClick={signOut}
           className="rounded-full cursor-pointer"
-          src={session && session.user.image}
+          src={session.user.image}
           width='40'
           height='40'
           layout="fixed"
           alt='user-image'
         />
 
-        <p className="whitespace-nowrap font-semibold pr-3">{session && session.user.name}</p>
+        <p className="whitespace-nowrap font-semibold pr-3">{session.user.name}</p>
         <ViewGridAddIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />
         <ChatIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />
         <BellIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />
