@@ -3,7 +3,7 @@ import React from "react";
 
 export default function SidebarRow({ src, Icon, title }) {
   return (
-    <div>
+    <div className="flex items-center space-x-2 p-4">
       {src && (
         <Image
           className="rounded-full"
