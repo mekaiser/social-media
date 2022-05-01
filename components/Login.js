@@ -13,7 +13,7 @@ export default function Login() {
         alt="Login"
       />
       <h1 onClick={signIn} className="p-5 bg-blue-500 rounded-full text-white text-center cursor-pointer">
-        Login with Facebook
+        Login with FB
       </h1>
     </div>
   );
