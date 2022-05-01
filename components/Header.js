@@ -18,7 +18,7 @@ import React from "react";
 import HeaderIcon from "./HeaderIcon";
 
 export default function Header() {
-  const {session} = useSession();
+  const {data: session} = useSession();
   console.log("session", session);
 
   return (
