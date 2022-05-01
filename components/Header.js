@@ -12,11 +12,14 @@ import {
   UserGroupIcon,
   ViewGridAddIcon
 } from "@heroicons/react/solid";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 import HeaderIcon from "./HeaderIcon";
 
 export default function Header() {
+  const {session} = useSession();
+
   return (
     <div className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
       {/* Left */}
@@ -52,6 +55,16 @@ export default function Header() {
       {/* Right */}
       <div className="flex items-center sm:space-x-2  justify-end">
         {/* Profile pic */}
+        <Image
+          onClick={signOut}
+          className="rounded-full cursor-pointer"
+          src={session.user.image}
+          width='40'
+          height='40'
+          layout="fixed"
+          alt='user-image'
+        />
+
         <p className="whitespace-nowrap font-semibold pr-3">Kaiser Ahmed</p>
         <ViewGridAddIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />
         <ChatIcon className="hidden xl:inline-flex p-2 h-10 w-10 bg-gray-200 rounded-full text-gray-70 cursor-pointer hover:bg-gray-300" />
