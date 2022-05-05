@@ -3,7 +3,7 @@ import { getSession } from "next-auth/react";
 import Head from "next/head";
 import Feed from "../components/Feed";
 import Header from "../components/Header";
-import Login from '../components/Login';
+import Login from "../components/Login";
 import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
 import { db } from "../firebase";

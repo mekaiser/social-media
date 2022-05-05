@@ -1,13 +1,13 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { getApp, getApps, initializeApp } from "firebase/app";
 import {
-    addDoc,
-    collection,
-    doc,
-    getDownloadURL,
-    getFirestore,
-    serverTimestamp,
-    setDoc
+  addDoc,
+  collection,
+  doc,
+  getDownloadURL,
+  getFirestore,
+  serverTimestamp,
+  setDoc
 } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -24,10 +24,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
 // !Initializing Didn't work as expected
-// !const app = !getApps().length ? initializeApp(firebaseConfig) : getApps();
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 // Initialize Services
 const db = getFirestore(app);
@@ -35,13 +35,13 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 export {
-    addDoc,
-    setDoc,
-    serverTimestamp,
-    storage,
-    collection,
-    db,
-    getDownloadURL,
-    doc,
+  addDoc,
+  setDoc,
+  serverTimestamp,
+  storage,
+  collection,
+  db,
+  getDownloadURL,
+  doc,
 };
 
