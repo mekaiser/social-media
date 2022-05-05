@@ -24,9 +24,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-
-// !Initializing Didn't work as expected
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 // Initialize Services
